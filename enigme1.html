@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Énigme 1 - La première lettre</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #f0f6fc;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .enigme-box {
+      background-color: #161b22;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      max-width: 500px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #238636;
+      color: white;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="enigme-box">
+    <h2>Énigme 1 : L'étrange alphabet</h2>
+    <p>
+      Je suis la 11ème lettre de l'alphabet,<br>
+      souvent oubliée, jamais absente<br>
+      dans "koala", "karaté", ou "kilo".
+    </p>
+
+    <input type="text" id="reponse" placeholder="Ta réponse ici...">
+    <button onclick="verifier()">Valider</button>
+    <div class="result" id="resultat"></div>
+  </div>
+
+  <script>
+    function verifier() {
+      const input = document.getElementById("reponse").value.trim().toLowerCase();
+      const result = document.getElementById("resultat");
+      if (input === "k") {
+        result.textContent = "Correct ! Tu as trouvé la première lettre : K";
+        result.style.color = "#00ff00";
+      } else {
+        result.textContent = "Essaie encore...";
+        result.style.color = "#ff5555";
+      }
+    }
+  </script>
+</body>
+</html>
